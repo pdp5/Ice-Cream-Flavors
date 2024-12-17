@@ -1,0 +1,73 @@
+/* #root {
+  max-width: 1280px;
+  /* margin: 0 auto; */
+/* padding: 2rem;
+  text-align: center;
+} */
+#root {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  flex-wrap: wrap;
+  font-size: larger;
+  /* flex-direction: column; */
+}
+
+body {
+  margin: 0;
+  display: flex;
+
+  /* background-color: aqua; */
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container .flavor-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  align-items: center;
+  margin: 10px;
+}
+.flavor-container .image-container {
+  padding: 5px;
+}
+.flavor-container .image-container img {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+.main-container h1 {
+  text-align: center;
+  text-decoration: underline wavy;
+}
+.main-container .form {
+  margin: 20px;
+}
+.main-container .form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: larger;
+}
+.main-container .form form label {
+  margin-top: 10px;
+}
+.main-container .form form input {
+  font-size: large;
+}
+.main-container .form form button {
+  font-size: large;
+  margin: 10px;
+}
