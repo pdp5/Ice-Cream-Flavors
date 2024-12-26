@@ -5,10 +5,8 @@ import cors from "cors";
 
 dotenv.config();
 const url = process.env.DATABASE_URL;
-console.log("URL: ", url);
 
 const port = process.env.PORT;
-console.log(port);
 
 const app = express();
 app.use(cors());
@@ -21,14 +19,17 @@ const init = async () => {
     await client.connect();
 
     const SQL = `
-        CREATE TABLE IF NOT EXISTS flavors(
+        DROP TABLE IF EXISTS flavors;
+        CREATE TABLE flavors(
         id SERIAL PRIMARY KEY,
         flavor_name TEXT,
         is_favorite BOOLEAN DEFAULT FALSE,
         created_at TIMESTAMP DEFAULT now(),
         updated_at TIMESTAMP DEFAULT now()
         );
-
+        INSERT INTO flavors (flavor_name , is_favorite) VALUES ('Vanilla' , false);
+        INSERT INTO flavors (flavor_name , is_favorite) VALUES ('Chocolate' , false);
+        INSERT INTO flavors (flavor_name , is_favorite) VALUES ('Pista' , false);
     `;
 
     await client.query(SQL);
